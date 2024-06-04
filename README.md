@@ -4,7 +4,7 @@ This project is a course project for the subject "Python Basics" at Sofia Univer
 
 ## Description
 
-This project analyzes and visualizes semiconductor production data for a company like GlobalFoundries using Python. 
+This project analyzes and visualizes semiconductor production data for companies like GlobalFoundries using Python. 
 The project demonstrates data reading, processing, visualization, and statistical analysis using various Python libraries such as pandas, numpy, and plotly.
 
 
