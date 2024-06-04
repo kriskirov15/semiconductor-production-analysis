@@ -61,11 +61,11 @@ def visualize_data(grouped_data):
         x="date",
         y=["produced_chips", "defective_percentage"],
         labels={
-            "value": "Количество / Процент",
+            "value": "Количество / Процент (%)",
             "date": "Дата",
             "variable": "Променлива",
         },
-        title="Произведени чипове и процент на дефектни чипове по дати",
+        title="Произведени чипове & Процент (%) на дефектни чипове по дати",
     )
     fig.show()
 
@@ -106,7 +106,7 @@ def analyze_defective_percentage(grouped_data):
     for index, row in grouped_data.iterrows():
         if row["defective_percentage"] > 5:
             print(
-                f"Внимание: Висок процент дефектни чипове на дата {row['date']}: {row['defective_percentage']:.2f}%"
+                f"Внимание: Висок процент (%) дефектни чипове на дата {row['date']}: {row['defective_percentage']:.2f}%"
             )
 
 
@@ -124,7 +124,7 @@ def additional_analysis(data):
         * 100
     ).round(2)
     print(
-        f"\n Среден процент дефектни чипове по размер на пластината: {average_defect_rate_by_wafer_size}"
+        f"\n Среден процент (%) дефектни чипове по размер на пластината: {average_defect_rate_by_wafer_size}"
     )
 
     # Analysis by shift
@@ -133,7 +133,9 @@ def additional_analysis(data):
         / data.groupby("shift")["produced_chips"].sum()
         * 100
     ).round(2)
-    print(f"\n Среден процент дефектни чипове по смяна: {average_defect_rate_by_shift}")
+    print(
+        f"\n Среден процент (%) дефектни чипове по смяна: {average_defect_rate_by_shift}"
+    )
 
     # Analysis by machine
     average_defect_rate_by_machine = (
@@ -142,7 +144,7 @@ def additional_analysis(data):
         * 100
     ).round(2)
     print(
-        f"\n Среден процент дефектни чипове по машина: {average_defect_rate_by_machine}"
+        f"\n Среден процент (%) дефектни чипове по машина: {average_defect_rate_by_machine}"
     )
 
     # Visualization of the additional analyses
